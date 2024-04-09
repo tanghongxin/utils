@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "target": "esnext",
+  },
+  "include": [
+    "src",
+    "tests",
+    "types"
+  ],
+}
