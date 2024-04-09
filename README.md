@@ -11,4 +11,4 @@ pnpm add @tanghongxin/utils
 
 ## Doc
 
-see [Type Definitions](./index.d.ts)
+see [Type Definitions](https://github.com/tanghongxin/utils/blob/main/index.d.ts)
