@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /**
  * Applicable to mainland China
  */

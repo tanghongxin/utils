@@ -1,7 +1,7 @@
 /**
  * Scrolls the page to the top when called.
  *
- * @return 
+ * @return
  */
 export function scrollToTop(): void {
   const c: number = document.documentElement.scrollTop || document.body.scrollTop;
@@ -14,12 +14,16 @@ export function scrollToTop(): void {
 /**
  * Toggles the full screen mode of the document.
  *
- * @return 
+ * @return
  */
 export function toggleFullScreen(): void {
   const doc: Document = window.document;
 
-  if (!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+  if (
+    !doc.fullscreenElement
+    && !doc.mozFullScreenElement
+    && !doc.webkitFullscreenElement
+    && !doc.msFullscreenElement) {
     doc.documentElement.requestFullscreen();
   } else {
     doc.exitFullscreen();
@@ -30,7 +34,7 @@ export function toggleFullScreen(): void {
  * Copies the given string to the clipboard.
  *
  * @param str - the string to be copied
- * @return 
+ * @return
  */
 export function copy(str: string): void {
   const el: HTMLTextAreaElement = document.createElement('textarea');

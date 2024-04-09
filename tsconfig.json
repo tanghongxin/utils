@@ -10,4 +10,8 @@
     "tests",
     "types"
   ],
+  "types": [
+    "@types/node",
+    "vite/client"
+  ],
 }

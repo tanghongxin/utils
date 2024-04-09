@@ -3,7 +3,7 @@
  *
  * @param url - The URL of the file to download
  * @param fileName - The name to save the downloaded file as
- * @return 
+ * @return
  */
 export function download(url: string, fileName: string): void {
   const link: HTMLAnchorElement = document.createElement('a');

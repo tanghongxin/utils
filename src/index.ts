@@ -1,11 +1,11 @@
-export * from './basic'
-export * from './color'
-export * from './date'
-export * from './dom'
-export * from './file'
-export * from './ua'
-export * from './vue'
-export * from './wx'
+export * from './basic';
+export * from './color';
+export * from './date';
+export * from './dom';
+export * from './file';
+export * from './ua';
+export * from './vue';
+export * from './wx';
 
 /**
  * Executes the callback immediately and then sets up a recurring interval to call the callback function.
@@ -30,6 +30,7 @@ export function immediateInterval(cb: Function, ms: number, ...argus: any[]): nu
 export function debounce(func: Function, delay: number): Function {
   let timerId: ReturnType<typeof setTimeout>;
 
+  // eslint-disable-next-line func-names
   return function (...args: any[]) {
     clearTimeout(timerId);
 

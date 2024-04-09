@@ -7,7 +7,7 @@
 export function isEmpty(val: any): boolean {
   switch (Object.prototype.toString.call(val)) {
     case '[object Number]':
-      return isNaN(val as number);
+      return Number.isNaN(val as number);
     case '[object Array]':
     case '[object String]':
       return !(val as Array<any> | string).length;

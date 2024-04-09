@@ -15,7 +15,7 @@ export function isDecimal(num: number): boolean {
  * @return Whether the input string is a valid decimal number
  */
 export function isDecimalStr(str: string): boolean {
-  return !isNaN(Number(str)) && isDecimal(Number(str));
+  return !Number.isNaN(Number(str)) && isDecimal(Number(str));
 }
 
 /**
@@ -29,7 +29,7 @@ export function formatterNumberPrecision(val: number, precision: number = 2): st
   const num: number = Number(val);
 
   // Non-standard number handling
-  if (isNaN(num)) {
+  if (Number.isNaN(num)) {
     return val.toString();
   }
 
