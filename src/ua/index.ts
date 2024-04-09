@@ -1,7 +1,7 @@
 import {
   WIN_REGEX,
   MOBILE_REGEX,
-} from './Regex';
+} from '../basic/regex';
 
 /**
  * Check if the user agent indicates that the browser is WeChat.
