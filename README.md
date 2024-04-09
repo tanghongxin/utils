@@ -1,6 +1,6 @@
 # @tanghongxin/utils
 
-Collection of JS frequently-used snippets
+Collection of JS frequently-used snippets, mainly suitable for browser environment
 
 ## Usage
 

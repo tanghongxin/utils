@@ -5,7 +5,6 @@ export * from './dom';
 export * from './file';
 export * from './ua';
 export * from './vue';
-export * from './wx';
 
 /**
  * Executes the callback immediately and then sets up a recurring interval to call the callback function.

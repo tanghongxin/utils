@@ -7,9 +7,7 @@ module.exports = {
   extends: [
     'airbnb-base',
   ],
-  globals: {
-    wx: true,
-  },
+  globals: {},
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2021,
