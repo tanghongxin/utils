@@ -2,3 +2,4 @@ dist
 esm
 lib
 node_modules
+index.d.ts

@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       dts({
-        outDir: 'esm',
+        outDir: '.',
         staticImport: true,
         rollupTypes: true,
       }),
