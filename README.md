@@ -5,7 +5,6 @@ Collection of JS frequently-used snippets, mainly suitable for browser environme
 ## Usage
 
 ```sh
-echo @tanghongxin:registry=https://npm.pkg.github.com > .npmrc
 pnpm add @tanghongxin/utils
 ```
 
