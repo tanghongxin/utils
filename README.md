@@ -1,11 +1,11 @@
-# @tanghongxin/utils
+# @rthx/utils
 
 Collection of JS frequently-used snippets, mainly suitable for browser environment
 
 ## Usage
 
 ```sh
-pnpm add @tanghongxin/utils
+pnpm add @rthx/utils
 ```
 
 ## Doc
