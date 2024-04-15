@@ -16,6 +16,22 @@ export function download(url: string, fileName: string): void {
 }
 
 /**
+ * Saves the provided content to a file with the specified file name.
+ *
+ * @param {any} content - The content to be saved to the file
+ * @param {string} fileName - The name of the file to save the content as
+ * @return {void}
+ */
+export function saveFile(content: any, fileName: string): void {
+  const blob = new Blob([content]);
+  const url = URL.createObjectURL(blob);
+  download(url, fileName);
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+  });
+}
+
+/**
  * Convert a blob to base64.
  *
  * @param blob - The blob to be converted to base64.

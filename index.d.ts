@@ -35,12 +35,40 @@ export declare function blobToBase64(blob: Blob): Promise<string>;
 export declare function blobToFile(blob: Blob, fileName: string): File;
 
 /**
+ * Chunks an array into smaller arrays of a specified size.
+ *
+ * @param arr The array to be chunked, of type `T[]`.
+ * @param size The size of each chunk, of type `number`.
+ * @return An array of arrays of type `T[][]`.
+ */
+export declare function chunk<T>(arr: T[], size: number): T[][];
+
+/**
+ * Clamp a value between a minimum and maximum value.
+ *
+ * @param value - The value to be clamped
+ * @param min - The minimum value that `value` can be
+ * @param max - The maximum value that `value` can be
+ * @return The clamped value between `min` and `max`
+ */
+export declare function clamp(value: number, min: number, max: number): number;
+
+/**
  * Copies the given string to the clipboard.
  *
  * @param str - the string to be copied
  * @return
  */
 export declare function copy(str: string): void;
+
+/**
+ * A function that cuts a string based on the maximum length considering both single and double byte characters.
+ *
+ * @param {string} str - the input string to be processed
+ * @param {number} maxLength - the maximum length the string should be cut to
+ * @return {string} the resulting string after cutting based on the maxLength
+ */
+export declare const cutStrByFullLength: (str: string, maxLength: number) => string;
 
 /**
  * Validates the format and value of a date string.
@@ -112,14 +140,23 @@ export declare function formatterNumberPrecision(val: number, precision?: number
 export declare function formatTimestamp(timestamp: number, format: string): string;
 
 /**
- * Retrieves the safe area information including the top and bottom positions.
+ * Calculates the full length of a string taking into account unicode characters.
  *
- * @return A Promise that resolves to an object containing the top and bottom positions of the safe area.
+ * @param {string} str - the input string to calculate the full length of
+ * @return {number} the full length of the input string
  */
-export declare function getSafeArea(): Promise<{
-    top: number;
-    bottom: number;
-}>;
+export declare const getStrFullLength: (str?: string) => number;
+
+/**
+ * Returns an object containing the parameters of the given URL.
+ *
+ * @param url The URL to be parsed, of type `string`.
+ *
+ * @returns An object containing the parameters of the URL, of type `{ [key: string]: string }`.
+ */
+export declare function getURLParameters(url: string): {
+    [key: string]: string;
+};
 
 /**
  * Converts a hexadecimal color code to its RGBA equivalent.
@@ -144,6 +181,22 @@ export declare const ID_CARD_REGEX: RegExp;
  * @return The ID value that uniquely identifies the interval.
  */
 export declare function immediateInterval(cb: Function, ms: number, ...argus: any[]): number;
+
+export declare const isArray: (arg: any) => arg is any[];
+
+/**
+ * Check if the input string is a Chinese string.
+ * @param str The input string to be checked
+ * @return Whether the input string is a Chinese string
+ */
+export declare function isChinese(str: string): boolean;
+
+/**
+ * Check if the value is a Date object.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a Date object, otherwise returns false.
+ */
+export declare const isDate: (val: unknown) => boolean;
 
 /**
  * Check if the given number is a decimal.
@@ -170,6 +223,13 @@ export declare function isDecimalStr(str: string): boolean;
 export declare function isEmpty(val: any): boolean;
 
 /**
+ * Check if the value is a function.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a function, otherwise returns false.
+ */
+export declare const isFunction: (val: unknown) => boolean;
+
+/**
  * Checks if the browser is Internet Explorer.
  *
  * @return true if the browser is Internet Explorer, false otherwise
@@ -177,12 +237,61 @@ export declare function isEmpty(val: any): boolean;
 export declare function isIE(): boolean;
 
 /**
+ * Check if the value is a Map object.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a Map object, otherwise returns false.
+ */
+export declare const isMap: (val: unknown) => boolean;
+
+/**
+ * Check if the value is a number.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a number, otherwise returns false.
+ */
+export declare const isNum: (val: unknown) => boolean;
+
+/**
+ * Check if the value is an object.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is an object, otherwise returns false.
+ */
+export declare const isObject: (val: unknown) => boolean;
+
+/**
  * Check if the given object is a Promise.
  *
- * @param obj - The object to be checked
- * @return Whether the object is a Promise or not
+ * @param {any} obj - The object to be checked
+ * @return {boolean} Whether the object is a Promise or not
  */
-export declare function isPromise(obj: any): boolean;
+export declare const isPromise: <T extends unknown = unknown>(val: unknown) => boolean;
+
+/**
+ * Check if the value is a RegExp object.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a RegExp object, otherwise returns false.
+ */
+export declare const isRegExp: (val: unknown) => boolean;
+
+/**
+ * Check if the value is a Set object.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a Set object, otherwise returns false.
+ */
+export declare const isSet: (val: unknown) => boolean;
+
+/**
+ * Check if the value is a string.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a string, otherwise returns false.
+ */
+export declare const isString: (val: unknown) => boolean;
+
+/**
+ * Check if the value is a symbol.
+ * @param {unknown} val - The value to be checked.
+ * @returns {boolean} - Returns true if the value is a symbol, otherwise returns false.
+ */
+export declare const isSymbol: (val: unknown) => boolean;
 
 /**
  * Check if the current platform is a Windows operating system.
@@ -199,6 +308,8 @@ export declare function isWin(): boolean;
 export declare function isWX(): boolean;
 
 export declare const MOBILE_REGEX: RegExp;
+
+export declare const objectToString: () => string;
 
 /**
  * Calculate the percentage of a given value.
@@ -234,11 +345,43 @@ export declare function randomString(len?: number): string;
 export declare function removeKeepAliveCache(vm: any): void;
 
 /**
- * Scrolls the page to the top when called.
+ * Saves the provided content to a file with the specified file name.
  *
- * @return
+ * @param {any} content - The content to be saved to the file
+ * @param {string} fileName - The name of the file to save the content as
+ * @return {void}
  */
-export declare function scrollToTop(): void;
+export declare function saveFile(content: any, fileName: string): void;
+
+/**
+ * Scrolls to the given coordinates.
+ *
+ * @param {object} options - The options object.
+ * @param {function} options.getContainer - The function to get the container element.
+ * @param {number} options.left - The left coordinate.
+ * @param {number} options.top - The top coordinate.
+ * @return {void}
+ */
+declare function scrollTo_2(options: {
+    getContainer?: () => HTMLElement;
+    left?: number;
+    top?: number;
+}): void;
+export { scrollTo_2 as scrollTo }
+
+/**
+ * Sets the document title and triggers a force refresh in WeChat environment.
+ *
+ * @param {string} title - The new title for the document.
+ */
+export declare function setDocumentTitle(title: string): void;
+
+/**
+ * Randomizes the order of the values of an array, returning a new array.
+ * @param arr The array to be shuffled, of type `T[]`.
+ * @returns A new array with the same elements as `arr` but in a random order, of type `T[]`.
+ */
+export declare function shuffle<T>(arr: T[]): T[];
 
 /**
  * Pause execution for a specified number of milliseconds.
@@ -258,9 +401,30 @@ export declare const TEL_REGEX: RegExp;
 export declare function toggleFullScreen(): void;
 
 /**
+ * Converts a string to kebab-case, with all words separated by hyphens.
+ * @param str The input string to be converted, may be any type.
+ * @return The resulting kebab-case string. If the input is not a string, the result will be the empty string.
+ */
+export declare function toKebabCase(str: string): string;
+
+/**
+ * @function toTypeString
+ * @returns {string}
+ */
+export declare const toTypeString: (value: unknown) => string;
+
+/**
  * Triggers a window resize event.
  */
 export declare function triggerWindowResizeEvent(): void;
+
+/**
+ * Generates a new array with unique elements.
+ *
+ * @param {Array} arr - The input array
+ * @return {Array} A new array with unique elements
+ */
+export declare function uniq<T>(arr: T[]): T[];
 
 export declare const URL_REGEX: RegExp;
 

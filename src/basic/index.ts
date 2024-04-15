@@ -1,6 +1,5 @@
 export * from './array';
-export * from './boolean';
+export * from './general';
 export * from './number';
-export * from './promise';
 export * from './regex';
 export * from './string';

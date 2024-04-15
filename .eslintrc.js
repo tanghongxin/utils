@@ -38,6 +38,9 @@ module.exports = {
     'no-promise-executor-return': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { ignoreRestSiblings: true }],
+    'default-param-last': 'off',
+    'eslint-disable-next-line': 'off',
+    'no-nested-ternary': 'off',
   },
   settings: {
     'import/resolver': {
