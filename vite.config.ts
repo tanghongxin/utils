@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       dts({
         outDir: '.',
+        entryRoot: 'src',
         staticImport: true,
         rollupTypes: true,
       }),
