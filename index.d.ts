@@ -1,4 +1,4 @@
-export declare const BANK_CARD_ID_REGEX: RegExp;
+/// <reference path="./types/index.d.ts" />
 
 /**
  * Converts a base64 string to a Blob object.
@@ -26,15 +26,6 @@ export declare function base64ToFile(base64String: string, fileName: string): Fi
 export declare function blobToBase64(blob: Blob): Promise<string>;
 
 /**
- * Create a new File object from the provided blob and file name.
- *
- * @param blob - The blob to be converted to a File object
- * @param fileName - The name of the file
- * @return The new File object created from the blob and file name
- */
-export declare function blobToFile(blob: Blob, fileName: string): File;
-
-/**
  * Chunks an array into smaller arrays of a specified size.
  *
  * @param arr The array to be chunked, of type `T[]`.
@@ -56,10 +47,10 @@ export declare function clamp(value: number, min: number, max: number): number;
 /**
  * Copies the given string to the clipboard.
  *
- * @param str - the string to be copied
- * @return
+ * @param {string} str - the string to be copied
+ * @return {Promise<void>} a promise that resolves when the text is successfully copied to the clipboard
  */
-export declare function copy(str: string): void;
+export declare function copyText(str: string): Promise<void>;
 
 /**
  * A function that cuts a string based on the maximum length considering both single and double byte characters.
@@ -88,13 +79,6 @@ export declare function dateValidate(dateStr: string): boolean;
 export declare function debounce(func: Function, delay: number): Function;
 
 /**
- * Function to detect the type of device based on the user agent.
- *
- * @return The type of device, either 'Mobile' or 'Desktop'
- */
-export declare function detectDeviceType(): string;
-
-/**
  * Downloads a file from the given URL with the specified file name.
  *
  * @param url - The URL of the file to download
@@ -102,8 +86,6 @@ export declare function detectDeviceType(): string;
  * @return
  */
 export declare function download(url: string, fileName: string): void;
-
-export declare const EMAIL_REGEX: RegExp;
 
 /**
  * Converts a file to base64 encoding.
@@ -147,6 +129,8 @@ export declare function formatTimestamp(timestamp: number, format: string): stri
  */
 export declare const getStrFullLength: (str?: string) => number;
 
+export declare const getTag: (value: unknown) => string;
+
 /**
  * Returns an object containing the parameters of the given URL.
  *
@@ -166,11 +150,6 @@ export declare function getURLParameters(url: string): {
  * @return the RGBA equivalent of the input hexadecimal color code
  */
 export declare function hexToRGBA(hex: string, alpha?: number): string;
-
-/**
- * Applicable to mainland China
- */
-export declare const ID_CARD_REGEX: RegExp;
 
 /**
  * Executes the callback immediately and then sets up a recurring interval to call the callback function.
@@ -207,20 +186,12 @@ export declare const isDate: (val: unknown) => boolean;
 export declare function isDecimal(num: number): boolean;
 
 /**
- * Check if the input string is a valid decimal number.
- *
- * @param str - The input string to be checked
- * @return Whether the input string is a valid decimal number
- */
-export declare function isDecimalStr(str: string): boolean;
-
-/**
  * Check if the input value is empty based on its type.
  *
  * @param val - The value to be checked for emptiness
  * @return true if the value is empty, false otherwise
  */
-export declare function isEmpty(val: any): boolean;
+export declare function isEmpty(value: unknown): boolean;
 
 /**
  * Check if the value is a function.
@@ -307,19 +278,6 @@ export declare function isWin(): boolean;
  */
 export declare function isWX(): boolean;
 
-export declare const MOBILE_REGEX: RegExp;
-
-export declare const objectToString: () => string;
-
-/**
- * Calculate the percentage of a given value.
- *
- * @param value - the value to calculate the percentage of
- * @param decimal - the number of decimal places to round the percentage to (default is 2)
- * @return the formatted percentage value
- */
-export declare function percentage(value: number, decimal?: number): string;
-
 /**
  * Returns a human-readable file size.
  *
@@ -391,7 +349,12 @@ export declare function shuffle<T>(arr: T[]): T[];
  */
 export declare const sleep: (ms: number) => Promise<void>;
 
-export declare const TEL_REGEX: RegExp;
+/**
+ * Converts a string to camelCase, with the first letter of each word except the first capitalized and no spaces.
+ * @param str The input string to be converted, may be any type.
+ * @return The resulting camelCase string. If the input is not a string, the result will be the empty string.
+ */
+export declare function toCamelCase(str: string): string;
 
 /**
  * Toggles the full screen mode of the document.
@@ -408,12 +371,6 @@ export declare function toggleFullScreen(): void;
 export declare function toKebabCase(str: string): string;
 
 /**
- * @function toTypeString
- * @returns {string}
- */
-export declare const toTypeString: (value: unknown) => string;
-
-/**
  * Triggers a window resize event.
  */
 export declare function triggerWindowResizeEvent(): void;
@@ -426,8 +383,6 @@ export declare function triggerWindowResizeEvent(): void;
  */
 export declare function uniq<T>(arr: T[]): T[];
 
-export declare const URL_REGEX: RegExp;
-
 /**
  * Generates a random UUID.
  *
@@ -435,14 +390,5 @@ export declare const URL_REGEX: RegExp;
  * @return The generated UUID.
  */
 export declare function uuid(randomLength?: number): string;
-
-/**
- * Function to determine the appropriate greeting based on the time of day.
- *
- * @return The appropriate greeting for the time of day.
- */
-export declare function welcome(): string;
-
-export declare const WIN_REGEX: RegExp;
 
 export { }

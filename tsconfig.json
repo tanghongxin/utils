@@ -3,7 +3,8 @@
     "baseUrl": ".",
     "module": "esnext",
     "target": "esnext",
-    "moduleResolution": "Bundler"
+    "moduleResolution": "Bundler",
+    "types": ["vitest/globals"]
   },
   "include": [
     "src",
@@ -12,6 +13,6 @@
   ],
   "types": [
     "@types/node",
-    "vite/client"
+    "vite/client",
   ],
 }

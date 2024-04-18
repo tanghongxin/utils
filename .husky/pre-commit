@@ -1,2 +1,4 @@
 pnpm lint
+pnpm auto-import
+git stage ./src/index.ts
 pnpm exec vitest run

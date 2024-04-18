@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import {
   loadEnv, defineConfig, UserConfig,
 } from 'vite';
@@ -8,12 +9,22 @@ export default defineConfig(({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
 
   return {
+    test: {
+      globals: true,
+      environment: 'jsdom',
+    },
     plugins: [
       dts({
-        outDir: '.',
+        outDir: __dirname,
         entryRoot: 'src',
         staticImport: true,
         rollupTypes: true,
+        beforeWriteFile: (filePath, content) => {
+          if (filePath === `${__dirname}/index.d.ts`) {
+            content = `/// <reference path="./types/index.d.ts" />\n\n${content}`;
+          }
+          return { filePath, content };
+        },
       }),
     ],
     build: {
