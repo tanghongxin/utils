@@ -4,5 +4,6 @@
  * @return Whether the input string is a Chinese string
  */
 export function isChinese(str: string): boolean {
+  if (!str) return false;
   return !/[^\u4e00-\u9fa5]/.test(str);
 }

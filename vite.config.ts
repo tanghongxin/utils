@@ -12,6 +12,11 @@ export default defineConfig(({ mode }) => {
     test: {
       globals: true,
       environment: 'jsdom',
+      // browser: {
+      //   enabled: true,
+      //   headless: true,
+      //   name: 'edge',
+      // },
     },
     plugins: [
       dts({

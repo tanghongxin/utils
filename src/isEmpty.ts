@@ -8,7 +8,6 @@ import { getTag } from './getTag';
  */
 export function isEmpty(value: unknown): boolean {
   switch (getTag(value)) {
-    case '[object Boolean]':
     case '[object Null]':
     case '[object Undefined]':
       return true;
@@ -20,8 +19,6 @@ export function isEmpty(value: unknown): boolean {
     case '[object Map]':
     case '[object Set]':
       return (value as Map<any, any> | Set<any>).size === 0;
-    case '[object Number]':
-      return value === 0;
     default:
       return false;
   }

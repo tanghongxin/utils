@@ -4,7 +4,7 @@
  * @return The resulting kebab-case string. If the input is not a string, the result will be the empty string.
  */
 export function toKebabCase(str: string): string {
-  if (typeof str !== 'string') {
+  if (typeof str !== 'string' || str.length === 0) {
     return '';
   }
 

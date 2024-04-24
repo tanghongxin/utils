@@ -104,22 +104,32 @@ export declare function fileToBase64(file: File): Promise<string>;
 export declare function fileToBlob(file: File): Promise<Blob>;
 
 /**
- * Format a number to a specific precision and add thousand separators.
+ * Format the given date according to the specified format.
  *
- * @param val - The number to be formatted
- * @param precision - The number of decimal places to round to (default is 2)
- * @return The formatted number with the specified precision and thousand separators
+ * @param date - The date to format
+ * @param format - The format string for the output
+ * @return The formatted string
  */
-export declare function formatterNumberPrecision(val: number, precision?: number): string;
+export declare function formatDate(date: Date | number, format: string): string;
 
 /**
- * Format the given timestamp according to the specified format.
+ * Returns a human-readable file size.
  *
- * @param timestamp - The timestamp to format
- * @param format - The format string for the output
- * @return The formatted timestamp
+ * @param size - The size of the file in bytes
+ * @param precision - The number of decimal places to round to (default is 2)
+ * @return A formatted string representing the file size
  */
-export declare function formatTimestamp(timestamp: number, format: string): string;
+export declare function formatFileSize(size: number, precision?: number): string;
+
+/**
+ * Format a number to a specific precision.
+ *
+ * @param {number} num - The number to be formatted
+ * @param {number} precision - The number of decimal places to round to (default is 2)
+ * @param {string} locals - An optional parameter specifying the locale for number formatting
+ * @return {string} The formatted number with the specified precision and thousand separators
+ */
+export declare function formatNumberPrecision(num: number, precision?: number, locals?: string): string;
 
 /**
  * Calculates the full length of a string taking into account unicode characters.
@@ -160,8 +170,6 @@ export declare function hexToRGBA(hex: string, alpha?: number): string;
  * @return The ID value that uniquely identifies the interval.
  */
 export declare function immediateInterval(cb: Function, ms: number, ...argus: any[]): number;
-
-export declare const isArray: (arg: any) => arg is any[];
 
 /**
  * Check if the input string is a Chinese string.
@@ -277,14 +285,6 @@ export declare function isWin(): boolean;
  * @return true if the user agent indicates that the browser is WeChat, false otherwise
  */
 export declare function isWX(): boolean;
-
-/**
- * Returns a human-readable file size.
- *
- * @param size - The size of the file in bytes
- * @return A formatted string representing the file size
- */
-export declare function prettyFileSize(size: number): string;
 
 /**
  * Generate a random string of a specified length.

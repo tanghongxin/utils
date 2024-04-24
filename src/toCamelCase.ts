@@ -8,14 +8,14 @@ export function toCamelCase(str: string): string {
     return '';
   }
 
-  const words = str.match(/[A-Za-z0-9]+/g); // Match words containing letters or digits
-  if (!words) return ''; // If no valid words found, return empty string
+  const words = str.match(/[A-Za-z0-9]+/g);
+  if (!words) return '';
 
   const camelCasedWords = words.map((word, index) => {
     if (index === 0) {
-      return word.toLowerCase(); // First word remains lowercase
+      return word.toLowerCase();
     }
-    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); // Capitalize first letter of subsequent words
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
   });
 
   return camelCasedWords.join('');

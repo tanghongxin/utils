@@ -6,11 +6,13 @@
  * @returns An object containing the parameters of the URL, of type `{ [key: string]: string }`.
  */
 export function getURLParameters(url: string): { [key: string]: string } {
-  const searchParams: string[] = (url.match(/([^?=&]+)(=([^&]*))/g) || []);
-  return searchParams.reduce((a: { [key: string]: string }, v: string) => {
-    const paramName: string = v.slice(0, v.indexOf('='));
-    const paramValue: string = v.slice(v.indexOf('=') + 1);
-    a[paramName] = paramValue;
-    return a;
-  }, {});
+  const { searchParams } = new URL(url);
+  const parameters = {};
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of searchParams.entries()) {
+    parameters[key] = value;
+  }
+
+  return parameters;
 }

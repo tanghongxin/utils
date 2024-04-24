@@ -4,8 +4,9 @@
  * @return true if the browser is Internet Explorer, false otherwise
  */
 export function isIE(): boolean {
-  const bw: string = window.navigator.userAgent;
-  const compare = (s: string) => bw.indexOf(s) >= 0;
-  const ie11 = (() => 'ActiveXObject' in window)();
-  return compare('MSIE') || ie11;
+  const { userAgent } = window.navigator;
+  const isIElt11 = userAgent.indexOf('compatible') > -1 && userAgent.indexOf('MSIE') > -1;
+  const isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf('rv:11.0') > -1;
+
+  return isIElt11 || isIE11;
 }
