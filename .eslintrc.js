@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'plugin:vitest-globals/recommended',
   ],
   globals: {},
   parser: '@typescript-eslint/parser',
@@ -42,6 +43,23 @@ module.exports = {
     'eslint-disable-next-line': 'off',
     'no-nested-ternary': 'off',
   },
+  overrides: [
+    {
+      files: ['./scripts/**/*.ts'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+    {
+      files: ['./tests/**/*.ts'],
+      env: {
+        'vitest-globals/env': true,
+      },
+      rules: {
+        'max-len': 'off',
+      },
+    },
+  ],
   settings: {
     'import/resolver': {
       node: {
