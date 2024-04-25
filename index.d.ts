@@ -62,14 +62,6 @@ export declare function copyText(str: string): Promise<void>;
 export declare const cutStrByFullLength: (str: string, maxLength: number) => string;
 
 /**
- * Validates the format and value of a date string.
- *
- * @param dateStr - The date string to be validated (format: YYYY/MM/DD).
- * @return true if the date string is valid, false otherwise.
- */
-export declare function dateValidate(dateStr: string): boolean;
-
-/**
  * Returns a debounced function that delays invoking the input function until after `delay` milliseconds have elapsed since the last time the debounced function was invoked.
  *
  * @param func - The function to be invoked after `delay` milliseconds have elapsed since the last time the debounced function was invoked.
@@ -390,5 +382,13 @@ export declare function uniq<T>(arr: T[]): T[];
  * @return The generated UUID.
  */
 export declare function uuid(randomLength?: number): string;
+
+/**
+ * Validates the format and value of a date string.
+ *
+ * @param dateStr - The date string to be validated (format: YYYY/MM/DD).
+ * @return true if the date string is valid, false otherwise.
+ */
+export declare function isDateStr(dateStr: string): boolean;
 
 export { }
