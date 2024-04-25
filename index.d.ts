@@ -178,6 +178,14 @@ export declare function isChinese(str: string): boolean;
 export declare const isDate: (val: unknown) => boolean;
 
 /**
+ * Validates the format and value of a date string.
+ *
+ * @param dateStr - The date string to be validated (format: YYYY/MM/DD).
+ * @return true if the date string is valid, false otherwise.
+ */
+export declare function isDateStr(dateStr: string): boolean;
+
+/**
  * Check if the given number is a decimal.
  *
  * @param num - The number to be checked
@@ -277,6 +285,13 @@ export declare function isWin(): boolean;
  * @return true if the user agent indicates that the browser is WeChat, false otherwise
  */
 export declare function isWX(): boolean;
+
+/**
+ * Generates a random Date object within the past 10 billion milliseconds.
+ *
+ * @return {Date} A random Date object.
+ */
+export declare function randomDate(): Date;
 
 /**
  * Generate a random string of a specified length.
@@ -382,13 +397,5 @@ export declare function uniq<T>(arr: T[]): T[];
  * @return The generated UUID.
  */
 export declare function uuid(randomLength?: number): string;
-
-/**
- * Validates the format and value of a date string.
- *
- * @param dateStr - The date string to be validated (format: YYYY/MM/DD).
- * @return true if the date string is valid, false otherwise.
- */
-export declare function isDateStr(dateStr: string): boolean;
 
 export { }
