@@ -11,14 +11,7 @@
 export function uuid(): string {
   // Create a 16-byte array
   const byteArray = new Uint8Array(16);
-
-  if (typeof window !== 'undefined' && window.crypto) {
-    window.crypto.getRandomValues(byteArray);
-  } else {
-    const crypto = require('crypto');
-    const randomBytes = crypto.randomBytes(16);
-    byteArray.set(randomBytes);
-  }
+  globalThis.crypto.getRandomValues(byteArray);
 
   // Convert bytes to hex string
   const hexArray = Array.from(byteArray, (b) => b.toString(16).padStart(2, '0'));
