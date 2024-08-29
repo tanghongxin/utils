@@ -175,7 +175,15 @@ export declare function isChinese(str: string): boolean;
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a Date object, otherwise returns false.
  */
-export declare const isDate: (val: unknown) => boolean;
+export declare const isDate: (val: unknown) => val is Date;
+
+/**
+ * Validates the format and value of a date string.
+ *
+ * @param dateStr - The date string to be validated (format: YYYY/MM/DD).
+ * @return true if the date string is valid, false otherwise.
+ */
+export declare function isDateStr(dateStr: string): boolean;
 
 /**
  * Check if the given number is a decimal.
@@ -198,7 +206,7 @@ export declare function isEmpty(value: unknown): boolean;
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a function, otherwise returns false.
  */
-export declare const isFunction: (val: unknown) => boolean;
+export declare const isFunction: (val: unknown) => val is Function;
 
 /**
  * Checks if the browser is Internet Explorer.
@@ -212,21 +220,21 @@ export declare function isIE(): boolean;
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a Map object, otherwise returns false.
  */
-export declare const isMap: (val: unknown) => boolean;
+export declare const isMap: (val: unknown) => val is Map<any, any>;
 
 /**
  * Check if the value is a number.
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a number, otherwise returns false.
  */
-export declare const isNum: (val: unknown) => boolean;
+export declare const isNum: (val: unknown) => val is number;
 
 /**
  * Check if the value is an object.
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is an object, otherwise returns false.
  */
-export declare const isObject: (val: unknown) => boolean;
+export declare const isObject: (val: unknown) => val is object;
 
 /**
  * Check if the given object is a Promise.
@@ -234,35 +242,35 @@ export declare const isObject: (val: unknown) => boolean;
  * @param {any} obj - The object to be checked
  * @return {boolean} Whether the object is a Promise or not
  */
-export declare const isPromise: <T extends unknown = unknown>(val: unknown) => boolean;
+export declare const isPromise: <T extends unknown = unknown>(val: unknown) => val is Promise<any>;
 
 /**
  * Check if the value is a RegExp object.
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a RegExp object, otherwise returns false.
  */
-export declare const isRegExp: (val: unknown) => boolean;
+export declare const isRegExp: (val: unknown) => val is RegExp;
 
 /**
  * Check if the value is a Set object.
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a Set object, otherwise returns false.
  */
-export declare const isSet: (val: unknown) => boolean;
+export declare const isSet: (val: unknown) => val is Set<any>;
 
 /**
  * Check if the value is a string.
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a string, otherwise returns false.
  */
-export declare const isString: (val: unknown) => boolean;
+export declare const isString: (val: unknown) => val is string;
 
 /**
  * Check if the value is a symbol.
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a symbol, otherwise returns false.
  */
-export declare const isSymbol: (val: unknown) => boolean;
+export declare const isSymbol: (val: unknown) => val is symbol;
 
 /**
  * Check if the current platform is a Windows operating system.
@@ -277,6 +285,13 @@ export declare function isWin(): boolean;
  * @return true if the user agent indicates that the browser is WeChat, false otherwise
  */
 export declare function isWX(): boolean;
+
+/**
+ * Generates a random Date object within the past 10 billion milliseconds.
+ *
+ * @return {Date} A random Date object.
+ */
+export declare function randomDate(): Date;
 
 /**
  * Generate a random string of a specified length.
@@ -375,20 +390,6 @@ export declare function triggerWindowResizeEvent(): void;
  */
 export declare function uniq<T>(arr: T[]): T[];
 
-/**
- * Generates a random UUID.
- *
- * @param randomLength - The length of the random part of the UUID.
- * @return The generated UUID.
- */
-export declare function uuid(randomLength?: number): string;
-
-/**
- * Validates the format and value of a date string.
- *
- * @param dateStr - The date string to be validated (format: YYYY/MM/DD).
- * @return true if the date string is valid, false otherwise.
- */
-export declare function isDateStr(dateStr: string): boolean;
+export declare function uuid(): string;
 
 export { }
