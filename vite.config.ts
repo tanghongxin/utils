@@ -12,6 +12,11 @@ export default defineConfig(({ mode }) => {
     test: {
       globals: true,
       environment: 'jsdom',
+      coverage: {
+        provider: 'v8',
+        reportsDirectory: './tests/coverage',
+        reporters: ['default', 'html'],
+      },
       // browser: {
       //   enabled: true,
       //   headless: true,
