@@ -186,14 +186,6 @@ export declare const isDate: (val: unknown) => val is Date;
 export declare function isDateStr(dateStr: string): boolean;
 
 /**
- * Validates the format and value of a date string.
- *
- * @param dateStr - The date string to be validated (format: YYYY/MM/DD).
- * @return true if the date string is valid, false otherwise.
- */
-export declare function isDateStr(dateStr: string): boolean;
-
-/**
  * Check if the given number is a decimal.
  *
  * @param num - The number to be checked
