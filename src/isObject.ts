@@ -3,4 +3,4 @@
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is an object, otherwise returns false.
  */
-export const isObject = (val: unknown): boolean => val !== null && typeof val === 'object';
+export const isObject = (val: unknown): val is object => val !== null && typeof val === 'object';
