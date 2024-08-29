@@ -39,7 +39,7 @@
     "lint:fix": "pnpm lint --fix",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "pub": "pnpm build && vite-node ./scripts/publish.ts",
+    "pub": "vite-node ./scripts/publish.ts",
     "prepare": "husky"
   },
   "devDependencies": {
