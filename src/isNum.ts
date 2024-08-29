@@ -3,4 +3,4 @@
  * @param {unknown} val - The value to be checked.
  * @returns {boolean} - Returns true if the value is a number, otherwise returns false.
  */
-export const isNum = (val: unknown): boolean => typeof (val) === 'number';
+export const isNum = (val: unknown): val is number => typeof (val) === 'number';
