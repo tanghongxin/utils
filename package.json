@@ -16,10 +16,22 @@
     "index.d.ts",
     "types"
   ],
-  "main": "lib/index.cjs",
-  "browser": "dist/index.js",
-  "module": "esm/index.mjs",
   "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./esm/index.mjs",
+      "require": "./lib/index.cjs",
+      "browser": "./dist/index.js"
+    },
+    "./lib/*": {
+      "import": "./lib/*",
+      "require": "./lib/*"
+    },
+    "./esm/*": {
+      "import": "./esm/*",
+      "require": "./esm/*"
+    }
+  },
   "scripts": {
     "auto-import": "vite-node ./scripts/autoImport.ts",
     "build": "pnpm auto-import && vite build",

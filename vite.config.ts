@@ -54,7 +54,7 @@ export default defineConfig(({ mode }) => {
           {
             format: 'cjs',
             dir: 'lib',
-            preserveModules: false,
+            preserveModules: true,
             exports: undefined,
             entryFileNames: '[name].cjs',
           },

@@ -390,6 +390,12 @@ export declare function triggerWindowResizeEvent(): void;
  */
 export declare function uniq<T>(arr: T[]): T[];
 
+/**
+ * Generates a random UUID string based on uuid v4 proposal
+ * @link https://www.rfc-editor.org/rfc/rfc9562.html#name-uuid-version-4
+ *
+ * @return A random UUID string in the format xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+ */
 export declare function uuid(): string;
 
 export { }
