@@ -1,18 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "module": "esnext",
     "target": "esnext",
     "moduleResolution": "Bundler",
-    "types": ["vitest/globals"]
+    "types": ["vitest/globals", "@types/node", "vite/client"]
   },
   "include": [
     "src",
     "tests",
-    "types"
-  ],
-  "types": [
-    "@types/node",
-    "vite/client",
-  ],
+    "types",
+    "scripts"
+  ]
 }

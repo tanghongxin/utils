@@ -1,7 +1,9 @@
-import fs from 'fs/promises';
-import path from 'path';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const srcDir = path.join(__dirname, '../src');
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const srcDir = path.join(scriptDir, '../src');
 const indexPath = path.join(srcDir, 'index.ts');
 
 (async () => {

@@ -3,7 +3,7 @@ import {
   loadEnv, defineConfig, UserConfig,
 } from 'vite';
 import dts from 'vite-plugin-dts';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 
 export default defineConfig(({ mode }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };

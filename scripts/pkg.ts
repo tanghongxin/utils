@@ -1,4 +1,4 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { readJson, writeJson } from './utils';
 
 const packageJsonPath = resolve(__dirname, '../package.json');
