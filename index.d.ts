@@ -310,6 +310,17 @@ export declare function randomString(len?: number): string;
 export declare function removeKeepAliveCache(vm: any): void;
 
 /**
+ * Retry a callback at a fixed interval until it succeeds or max attempts are exhausted.
+ *
+ * @param ms      - Delay in milliseconds between each retry attempt.
+ * @param retries - Maximum number of attempts.
+ * @param cb      - Async callback whose result determines success (truthy) or failure (falsy/throw).
+ * @returns The first truthy result from the callback.
+ * @throws  If all attempts are exhausted without a truthy result.
+ */
+export declare const retryWithInterval: <T>(ms?: number, retries?: number, cb?: () => Promise<T>) => Promise<T>;
+
+/**
  * Saves the provided content to a file with the specified file name.
  *
  * @param {any} content - The content to be saved to the file
