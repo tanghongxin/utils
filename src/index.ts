@@ -1,6 +1,7 @@
 export * from './base64ToBlob';
 export * from './base64ToFile';
 export * from './blobToBase64';
+export * from './checkScrollCompletion';
 export * from './chunk';
 export * from './clamp';
 export * from './copyText';

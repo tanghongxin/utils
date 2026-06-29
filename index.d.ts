@@ -26,6 +26,14 @@ export declare function base64ToFile(base64String: string, fileName: string): Fi
 export declare function blobToBase64(blob: Blob): Promise<string>;
 
 /**
+ * Checks if the scrolling of an HTML element has completed.
+ *
+ * @param el - The HTML element to check for scroll completion.
+ * @returns A promise that resolves when the scrolling has completed.
+ */
+export declare function checkScrollCompletion(el: HTMLElement): Promise<void>;
+
+/**
  * Chunks an array into smaller arrays of a specified size.
  *
  * @param arr The array to be chunked, of type `T[]`.
