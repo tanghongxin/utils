@@ -9,7 +9,7 @@
     "utils"
   ],
   "engines": {
-    "node": ">=22.20.0"
+    "node": ">=22.13.0"
   },
   "files": [
     "dist",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.10",
-    "@types/jsdom": "^21.1.6",
+    "@types/jsdom": "^28.0.3",
     "@types/node": "^22.20.0",
     "@types/semver": "^7.5.8",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
@@ -57,7 +57,7 @@
     "eslint-plugin-vitest-globals": "^1.5.0",
     "husky": "^9.0.11",
     "inquirer": "^9.2.19",
-    "jsdom": "^26.0.0",
+    "jsdom": "^29.1.1",
     "semver": "^7.6.0",
     "typescript": "5.4.3",
     "vite": "^7.3.6",
